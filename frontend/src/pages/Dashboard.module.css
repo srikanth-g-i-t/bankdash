@@ -1,0 +1,99 @@
+.page { padding: 40px; max-width: 1200px; }
+
+/* Page header */
+.pageHeader {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 36px;
+}
+.greeting { font-family: var(--ff-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+.pageTitle { font-family: var(--ff-serif); font-weight: 800; font-size: 2rem; letter-spacing: -0.02em; }
+.date { font-family: var(--ff-mono); font-size: 0.7rem; color: var(--muted); }
+
+/* Stats grid */
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+
+.statCard {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 22px 24px;
+  transition: border-color 0.2s;
+}
+.statCard:hover { border-color: rgba(218,155,40,0.3); }
+.statAccent { border-top: 2px solid var(--amber); }
+
+.statLabel { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.statValue { font-family: var(--ff-serif); font-weight: 800; font-size: 1.6rem; letter-spacing: -0.02em; color: var(--amber); margin-bottom: 4px; }
+.statGreen { color: var(--green) !important; }
+.statSub { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--muted); }
+
+/* Mid grid */
+.midGrid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 24px; }
+
+.chartCard, .accountsCard, .txCard {
+  background: var(--surface); border: 1px solid var(--border);
+}
+
+.cardHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px; border-bottom: 1px solid var(--border);
+}
+.cardLabel { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); }
+.seeAll { font-family: var(--ff-mono); font-size: 0.68rem; color: var(--muted); transition: color 0.2s; }
+.seeAll:hover { color: var(--amber); }
+
+.chartWrap { padding: 20px 12px; }
+
+.accountRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 20px; border-bottom: 1px solid rgba(218,155,40,0.06);
+  transition: background 0.15s;
+}
+.accountRow:hover { background: rgba(218,155,40,0.03); }
+.accountRow:last-child { border-bottom: none; }
+
+.accNum { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--cream); }
+.accType { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
+.accBalance { font-family: var(--ff-mono); font-size: 0.85rem; color: var(--amber); }
+
+/* Transaction table */
+.txTable { overflow-x: auto; }
+.txHead {
+  display: grid; grid-template-columns: 2fr 1fr 2fr 1.2fr 1fr 1.2fr;
+  padding: 10px 20px;
+  font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+.txRow {
+  display: grid; grid-template-columns: 2fr 1fr 2fr 1.2fr 1fr 1.2fr;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(218,155,40,0.06);
+  transition: background 0.15s;
+  align-items: center;
+}
+.txRow:hover { background: rgba(218,155,40,0.03); }
+
+.txRef, .txType, .txDesc, .txDate {
+  font-family: var(--ff-mono); font-size: 0.75rem; color: var(--cream-dim);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.txAmount { font-family: var(--ff-mono); font-size: 0.8rem; font-weight: 500; }
+.credit { color: var(--green); }
+.debit  { color: #E05252; }
+
+.txStatus {
+  font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em;
+  padding: 3px 8px; background: rgba(218,155,40,0.08); color: var(--muted); display: inline-block;
+}
+.completed { background: rgba(76,175,125,0.1); color: var(--green); }
+
+.empty { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--muted); }
+
+@media (max-width: 1100px) {
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+  .midGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .page { padding: 24px 16px; }
+  .statsGrid { grid-template-columns: 1fr; }
+  .pageHeader { flex-direction: column; gap: 8px; align-items: flex-start; }
+}

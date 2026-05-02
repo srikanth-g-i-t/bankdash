@@ -1,0 +1,34 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: transaction-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/bankdash_transactions}
+    username: ${SPRING_DATASOURCE_USERNAME:bankdash}
+    password: ${SPRING_DATASOURCE_PASSWORD:bankdash123}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+jwt:
+  secret: ${JWT_SECRET:bankdash-super-secret-jwt-key-2025-change-in-production}
+
+services:
+  account-service:
+    url: ${ACCOUNT_SERVICE_URL:http://localhost:8082}
+
+kafka:
+  topics:
+    transaction-events: transaction-events

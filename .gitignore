@@ -1,0 +1,23 @@
+# Maven
+backend/*/target/
+backend/*/*.class
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Environment
+.env
+*.env.local
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Docker
+docker-compose.override.yml
+
+# OS
+.DS_Store
+Thumbs.db

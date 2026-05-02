@@ -1,0 +1,64 @@
+.page { padding: 40px; max-width: 1100px; }
+.pageHeader { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
+.breadcrumb { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 4px; }
+.title { font-family: var(--ff-serif); font-weight: 800; font-size: 2rem; letter-spacing: -0.02em; }
+
+.addBtn {
+  background: var(--amber); color: var(--bg);
+  font-family: var(--ff-mono); font-size: 0.75rem; letter-spacing: 0.08em;
+  padding: 10px 20px; border: none; transition: background 0.2s;
+}
+.addBtn:hover { background: var(--amber-lt); }
+
+.summaryBar {
+  display: flex; gap: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 24px;
+}
+.summaryItem {
+  padding: 18px 28px; border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.summaryLabel { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; }
+.summaryValue { font-family: var(--ff-serif); font-weight: 800; font-size: 1.5rem; color: var(--amber); letter-spacing: -0.02em; }
+
+/* Create form */
+.formCard { background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--amber); padding: 24px; margin-bottom: 24px; }
+.formTitle { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; color: var(--amber); margin-bottom: 18px; }
+.errorBox { background: rgba(224,82,82,0.08); border: 1px solid rgba(224,82,82,0.3); color: #E05252; font-family: var(--ff-mono); font-size: 0.75rem; padding: 9px 13px; margin-bottom: 14px; }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.formRow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.label { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; }
+.input, .select {
+  background: var(--bg); border: 1px solid var(--border); color: var(--cream);
+  padding: 10px 12px; font-family: var(--ff-mono); font-size: 0.82rem; outline: none; transition: border-color 0.2s; width: 100%;
+}
+.input:focus, .select:focus { border-color: var(--amber); }
+.submitBtn { align-self: flex-start; background: var(--amber); color: var(--bg); font-family: var(--ff-mono); font-size: 0.78rem; letter-spacing: 0.08em; padding: 10px 24px; border: none; transition: background 0.2s; }
+.submitBtn:hover:not(:disabled) { background: var(--amber-lt); }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.loading, .empty { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--muted); padding: 24px 0; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-top: 2px solid; padding: 24px; transition: border-color 0.2s; }
+.card:hover { border-color: rgba(218,155,40,0.3); }
+
+.cardTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.cardType { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.12em; font-weight: 500; }
+.cardStatus { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.1em; padding: 3px 8px; background: rgba(122,110,86,0.15); color: var(--muted); }
+.active { background: rgba(76,175,125,0.1); color: var(--green); }
+
+.nickname { font-family: var(--ff-serif); font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+.accountNumber { font-family: var(--ff-mono); font-size: 0.75rem; color: var(--muted); margin-bottom: 20px; letter-spacing: 0.06em; }
+
+.balanceSection { border-top: 1px solid var(--border); padding-top: 16px; }
+.balanceLabel { display: block; font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+.balance { font-family: var(--ff-serif); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--cream); }
+.balance small { font-size: 0.65rem; color: var(--muted); font-family: var(--ff-mono); }
+.opened { font-family: var(--ff-mono); font-size: 0.62rem; color: var(--muted); margin-top: 10px; }
+
+@media (max-width: 768px) { .formRow { grid-template-columns: 1fr; } .page { padding: 24px 16px; } }

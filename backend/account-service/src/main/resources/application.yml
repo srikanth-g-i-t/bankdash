@@ -1,0 +1,19 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: account-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/bankdash_accounts}
+    username: ${SPRING_DATASOURCE_USERNAME:bankdash}
+    password: ${SPRING_DATASOURCE_PASSWORD:bankdash123}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+jwt:
+  secret: ${JWT_SECRET:bankdash-super-secret-jwt-key-2025-change-in-production}
